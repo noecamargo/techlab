@@ -15,9 +15,9 @@
   "deploy": {
     "develop": {
       "user": "ec2-user",
-      "host": "52.15.53.55",
-      "ref": "origin/01-all-done",
-      "repo": "git@bitbucket.org:dmarciukaitiscds/pets-api.git",
+      "host": "18.218.164.170",
+      "ref": "origin/master",
+      "repo": "git@github.com:noecamargo/techlab.git",
       "path": "/home/ec2-user/",
       "post-deploy": "yarn install && pm2 startOrRestart ecosystem.json --update-env development",
       "env": {

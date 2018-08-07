@@ -1,0 +1,265 @@
+{
+	"info": {
+		"_postman_id": "8d5e80ed-1d77-4217-9e0b-04e07b644c4b",
+		"name": "SmartTalent",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Health Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{api_url}}/api/health-check",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"api",
+						"health-check"
+					]
+				},
+				"description": "Check server health"
+			},
+			"response": []
+		},
+		{
+			"name": "Get pets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{api_url}}/api/pets",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"api",
+						"pets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create pet",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "x",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "x",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "color",
+							"value": "x",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "size",
+							"value": "x",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "sex",
+							"value": "female/male",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "x",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "breed",
+							"value": "x",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "profilePicture",
+							"value": "x",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "photos[0]",
+							"value": "x",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{api_url}}/api/pets",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"api",
+						"pets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update pet",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{api_url}}/api/pets/{{pet_id}}",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"api",
+						"pets",
+						"{{pet_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete pet",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{api_url}}/api/pets/{{pet_id}}",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"api",
+						"pets",
+						"{{pet_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get one pet",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{api_url}}/api/pets/{{pet_id}}",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"api",
+						"pets",
+						"{{pet_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adopt",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "message",
+							"value": "Quiero adoptarlo!",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "contact",
+							"value": "mail@codigodelsur.com",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{api_url}}/api/pets/{{pet_id}}/adopt",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"api",
+						"pets",
+						"{{pet_id}}",
+						"adopt"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "99e9a01e-661b-4e1b-b4e5-84495a9a9006",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "8b5fe88d-a67b-4a9e-a505-f894dbab45c0",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "05ab95be-9a80-4b32-b63d-cce416edd69b",
+			"key": "api_url",
+			"value": "18.188.125.1:3001",
+			"type": "string",
+			"description": ""
+		},
+		{
+			"id": "6d7add57-cbe0-4d14-8a15-f983799bdaef",
+			"key": "pet_id",
+			"value": "aaaaaa",
+			"type": "string",
+			"description": ""
+		}
+	]
+}

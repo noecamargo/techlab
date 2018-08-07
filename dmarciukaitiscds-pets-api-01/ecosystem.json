@@ -1,0 +1,38 @@
+{
+  "apps": [
+    {
+      "name": "PET API",
+      "script": "./index.js",
+      "env": {
+        "COMMON_VARIABLE": true,
+        "LOG_LEVEL": "info"
+      },
+      "env_production": {
+        "NODE_ENV": "production"
+      }
+    }
+  ],
+  "deploy": {
+    "develop": {
+      "user": "ec2-user",
+      "host": "18.188.125.1",
+      "ref": "origin/01-all-done",
+      "repo": "git@bitbucket.org:dmarciukaitiscds/pets-api.git",
+      "path": "/home/ec2-user/",
+      "post-deploy": "yarn install && pm2 startOrRestart ecosystem.json --update-env development",
+      "env": {
+        "NODE_ENV": "development",
+        "PORT": 3001,
+        "JWT_SECRET": "0a6b944d-d2fb-46fc-a85e-0295c986cd9f",
+        "LOG_LEVEL": "info",
+        "BASE_PATH": "localhost",
+        "MONGO_HOST": "mongodb://admin:admin123@ds159631.mlab.com:59631/pets-api",
+        "MONGO_PORT": 59631,
+        "AWS_S3_BUCKET_NAME": "pets-api",
+        "AWS_ACCESS_KEY_ID": "AKIAJ5CID6XJVF77B3PA",
+        "AWS_SECRET_ACCESS_KEY": "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",
+        "HTTPS_ENABLED": "false"
+      }
+    }
+  }
+}

@@ -15,7 +15,7 @@
   "deploy": {
     "develop": {
       "user": "ec2-user",
-      "host": "18.218.164.170",
+      "host": "18.191.8.125",
       "ref": "origin/master",
       "repo": "git@github.com:noecamargo/techlab.git",
       "path": "/home/ec2-user/",
